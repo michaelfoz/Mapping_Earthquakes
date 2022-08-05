@@ -1,0 +1,30 @@
+/* Customize the Jumbotron */
+.jumbotron {
+    /* Image original source: https://www.alamy.com/multiple-traffic-lights-on-red-with-a-green-arrow-in-the-uk-image311617348.html */
+    background-image: url("https://raw.githubusercontent.com/michaelfoz/ucd-bootcamp-final-project-notes/main/static/images/traffic-lights-jumbotron.jpg");
+    background-size: 100% 175%;
+    text-align: left;
+    color: #FFC043;
+}
+
+.navbar {
+    text-align: left;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.col-md-4 {
+    background-color: #276EF1;
+    color: #ffffff;
+}
+
+.col-md-5 {
+    background-color: #ffffff;
+}
+
+/* Dashed border */
+hr.dashed {
+    border-top: 3px dashed #bbbbbb;
+}
+
+/* https://brandpalettes.com/uber-colors/ */
