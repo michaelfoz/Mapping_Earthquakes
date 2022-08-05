@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet-Basic-Map</title>
+
+    <!-- (Self-note: follow a,b,c,d,e [order in which code is added to this file per Module instructions]) -->
+    
+    <!-- (a) Leaflet CSS (from the "Preparing your page section" of this site: https://leafletjs.com/examples/quick-start/)-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <!-- (d) Our CSS (tells this index.html file to use the style.css file) -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+</head>
+<body>
+
+    <!-- (c) The div that holds our map -->
+    <div id="mapid"></div>
+
+    <!-- (b) Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+        <!-- Note: The Leaflet CSS and JavaScript files we added to the index.html file 
+            are referred to as content delivery networks (CDNs). 
+            Using CDNs has a security risk. To avoid the security risk, 
+            it's a best practice to include an integrity value with the CDN. 
+            Each file we added has its own integrity value, 
+            which is a Base64-encoded cryptographic hash of a resource 
+            that prevents the CDN from being hacked.-->
+    
+    <!-- (d) API key -->
+    <script type="text/javascript" src="static/js/config.js"></script>
+    
+    <!-- (e) Our JavaScript -->
+    <script type="text/javascript" src="static/js/cities.js"></script><!-- cities.js added in Module 13.4.2: Map Multiple Points; self-note: this has to be ABOVE the logic.js file -->
+    <script type="text/javascript" src="static/js/logic.js"></script>
+
+
+</body>
+</html>
+
+
+
+<!--
+
+Steps:
+
+    (1) Create Repo: Mapping_Earthquakes
+            (2) Create branch in Mapping_Earthquakes repo called: Simple_Leaflet_Map
+
+    (3) Create Simple_Map folder within Mapping_Earthquakes repo.
+            (4) Create index.html
+                    (5) inside index.html, type "!" then press "enter"
+                        to populate HTML5 boilerplate code; change the of the document
+                        in the <title> element (in the <head> section) from <title>Document</title>
+                                                                        to <title>Leaflet-Basic-Map</title>
+                    
+                            (6) Go to https://leafletjs.com/examples/quick-start/
+                                and add the Leaflet JavaScript Library into the index.html file
+
+                                In the <head> section, just below the <title> element, 
+                                add the following Leaflet CSS script from the "Preparing your page" section:
+
+                                (a) In the <head> section, just below the <title> element, 
+                                    add the following Leaflet CSS script from the "Preparing your page" section:
+
+                                    [comment] (a) Leaflet CSS [end of comment]
+                                    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+                                    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+                                    crossorigin=""/>
+                                
+                                (b) In the body of our index.html file, add the Leaflet JavaScript script:
+            
+                                    [comment] (b) Leaflet JavaScript [end of comment]
+                                    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                                    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                                    crossorigin=""></script>
+                                
+                                (c) Above the Leaflet JavaScript link script, add the following 
+                                    <div> element with the id tag for the map, as shown in the "Preparing your page" section:
+
+                                    [comment] (c) The div that holds our map [end of comment]
+                                    <div id="mapid"></div>
+
+    Create a Simple Map (Module 13.2.4): to create a map, need to create config.js and logic.js
+
+    (7) Simple_Map/static/<create (js) folder>
+    
+    (8) Simple_Map/static/js/<create (config.js)>
+            (The config.js file is like the config.pyfile we used to hold the OpenWeatherMap API and Google API keys.)
+    
+                (9) Inside config.js, add API key from mapbox
+
+    (10) Simple_Map/static/js<create (logic.js)>
+
+                (11) Inside logic.js, add:
+                
+                    // Add console.log to check to see if our code is working.
+                    console.log("working");
+            
+                        (The console.log() function with the phrase "working" inside the parentheses will 
+                        help us confirm that our logic.js file is being accessed in the console on Chrome.)
+                        
+                (12) Inside logic.js, add a Map Object
+
+                (13) Inside logic.js, add a tile layer for the map
+
+    (14) Allow our index.html file to use the config.js and logic.js scripts (Add JavaScript Tags to HTML Page).
+
+        (d/e) Add the following <script> elements below the 
+              Leaflet JavaScript link script and above the closing </body> element, and save the file:
+
+                [comment] (d) API key [end of comment]
+                <script type="text/javascript" src="static/js/config.js"></script>
+                [comment] (e) Our JavaScript [end of comment]
+                <script type="text/javascript" src="static/js/logic.js"></script>
+
+    (15) Create new branch within Simple_Map folder (Mapping_Single_Points folder):
+
+            (16) Copy/paste contents of Simple_Map folder into Mapping_Single_Points folder.
+
+    (17) Add a Marker to the Map (logic.js file)
+
+            //  Add a marker to the map for Los Angeles, California.
+            let marker = L.marker([34.0522, -118.2437]).addTo(map);
+
+                (18) In the logic.js file, add a circle to the map
+
+                        L.circle([34.0522, -118.2437], {
+                        radius: 100
+                        }).addTo(map);
+
+                (19) Create a light-yellow circle with black lines indicating a 300-pixel radius on a dark map.
+ 
+                        L.circleMarker([34.0522, -118.2437], {
+                            radius: 300,
+                            color: "black",
+                            fillColor: 'ffffa1'
+                        }).addTo(map);
+
+    (20) Create new branch within Simple_Map folder (Mapping_Multiple_Points folder):
+
+            (21) Copy/paste contents of Mapping_Single_Points folder into Mapping_Multiple_Points folder.
+
+    (22) Add Multiple Markers to the Map (logic.js file)
+
+            Replace the [marker] variable (which was used to map one location) with the [cities]
+            (The [cities] variable references the 5 most populous cities array in the code below):
+ 
+                // An array containing each city's location, state, and population.
+                let cities = [{
+                location: [40.7128, -74.0059],
+                city: "New York City",
+                state: "NY",
+                population: 8398748
+                },
+                {
+                location: [41.8781, -87.6298],
+                city: "Chicago",
+                state: "IL",
+                population: 2705994
+                },
+                {
+                location: [29.7604, -95.3698],
+                city: "Houston",
+                state: "TX",
+                population: 2325502
+                },
+                {
+                location: [34.0522, -118.2437],
+                city: "Los Angeles",
+                state: "CA",
+                population: 3990456
+                },
+                {
+                location: [33.4484, -112.0740],
+                city: "Phoenix",
+                state: "AZ",
+                population: 1660272
+                }
+                ];
+
+                    (23) Iterate through each city object and add each city location to the 
+                         marker() function, which will, in turn, be added to the map.
+
+                        // Loop through the cities array and create one marker for each city.
+                        cities.forEach(function(city) {
+                            console.log(city)
+                        });
+
+                    (24) Now, add each city's location to the map by adding the location to the marker() function.
+
+                        // Loop through the cities array and create one marker for each city.
+                        cities.forEach(function(city) {
+                            console.log(city)
+                            L.marker(city.location).addTo(map);
+                        });
+
+            (25) When handling large datasets, it's a best practice to have the data in an external file and refer to that file and dataset in the logic.js file.
+                
+                Even though the cities array is not that large, go ahead and 
+                create a new file in the "js" folder called "cities.js"
+
+                Cut the cities array data from the logic.js file, 
+                place it in the cities.js file, and save the file.
+
+                    (26) in logic.js:
+
+                        // (10th code added):
+                        // Get data from cities.js
+                        let cityData = cities;
+
+
+                    (27) in logic.js:
+
+                        // (11th code added--Now the cities array is assigned to the cityData variable, which means cities needs to be replaced with cityData in the forEach() function): 
+                        // Loop through the cities array and create one marker for each city.
+                        cityData.forEach(function(city) {
+                            console.log(city)
+                            L.marker(city.location).addTo(map);
+                        });
+
+                    (28) Intentional: receiving an "UncaughtReferenceError: cities is not defined" in the console when opening index.html
+                        
+                            To correct this error, in the body of the index.html file and before the path to the logic.js script, 
+                            add a <script> file with the path to the JavaScript cities.js file, like this:
+
+                            <script type="text/javascript" src="static/js/cities.js"></script>
+
+    (29) Bind a Popup to the Marker (in the logic.js file):
+
+            Add this code inside the .forEach() function:
+
+            .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population + "</h3>")
+            
+            (When clicking on each marker, it will show the name, state, and population of the city.)
+
+        
+        (30) Format the population with a thousands separator by using the toLocaleString() 
+             method on the city.population in the bindPopup() method
+
+            .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.populationtoLocaleString() + "</h3>")
+
+        
+    (31) Change the marker for each city to a circle that has a radius equivalent to the city's population
+        
+                (In the logic.js file):
+
+                replace the marker() function with the circleMarker() function in the forEach() function 
+                
+                Then assign the "radius" key to the population by using city.population
+
+
+                    (32) Divide population by 100000 (because the map isn't populating correctly--
+                        the radii are too large and don't fit the map)
+
+                        radius: city.population/100000
+
+
+-->
+
+
+<!-- 
+Rewind: REWIND
+To open the index.html file in the browser:
+
+(1) Open the command line and navigate to your Mapping_Earthquakes folder. The index.html file should be in the top-level of that folder.
+(2) On the command line, type python -m http.server and press Enter.
+-->
