@@ -1,0 +1,8 @@
+html,
+body,
+#mapid { /* "#mapid" references the "id" tag of the html.index page. */
+  width: 100%; /* Set the width of the <div> element to 100% of the page. */
+  height: 100%; /* Set height of the <div> slement to 100$ of the page. */ 
+  padding: 0;
+  margin: 0;
+}
