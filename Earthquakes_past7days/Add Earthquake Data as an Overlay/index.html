@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet-Basic-Map</title>
+
+    <!-- (Self-note: follow a,b,c,d,e [order in which code is added to this file per Module instructions]) -->
+    
+    <!-- (a) Leaflet CSS (from the "Preparing your page section" of this site: https://leafletjs.com/examples/quick-start/)-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+
+    <!-- (d) Our CSS (tells this index.html file to use the style.css file) -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+    <!-- (e) d3 JavaScript (to read an external .json file using the d3.json() method in the logic.js file) -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+<body>
+
+    <!-- (c) The div that holds our map -->
+    <div id="mapid"></div>
+
+    <!-- (b) Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+        <!-- Note: The Leaflet CSS and JavaScript files we added to the index.html file 
+            are referred to as content delivery networks (CDNs). 
+            Using CDNs has a security risk. To avoid the security risk, 
+            it's a best practice to include an integrity value with the CDN. 
+            Each file we added has its own integrity value, 
+            which is a Base64-encoded cryptographic hash of a resource 
+            that prevents the CDN from being hacked.-->
+    
+    <!-- (d) API key -->
+    <script type="text/javascript" src="static/js/config.js"></script>
+    
+    <!-- (e) Our JavaScript -->
+    <!-- (cities.js not needed, but for future reference: should be above the logic.js file because the logic.js file references the information/data housed inside cities.js)
+    <script type="text/javascript" src="static/js/cities.js"></script> -->
+    <!-- cities.js added in Module 13.4.2: Map Multiple Points; self-note: this has to be ABOVE the logic.js file -->
+    <script type="text/javascript" src="static/js/logicStep4.js"></script>
+
+ 
+</body>
+</html>
+
